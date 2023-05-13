@@ -3,6 +3,6 @@
 TODO
 ---
 
-[ ] - https://docs.expo.dev/guides/typescript/#typescript-for-config-files
-[ ] - precommit hooks
-[ ] - testable
+* [ ] - https://docs.expo.dev/guides/typescript/#typescript-for-config-files
+* [ ] - precommit hooks
+* [ ] - testable
