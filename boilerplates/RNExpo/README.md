@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [ ] - dark and light theme
-- [ ] - redux with rtk-query
-- [ ] - local storage
+- [x] - dark and light theme
+- [x] - redux with rtk-query
+- [x] - local storage
 - [ ] - https://docs.expo.dev/guides/typescript/#typescript-for-config-files
 - [ ] - precommit hooks
-- [ ] - testable
+- [-] - testable
