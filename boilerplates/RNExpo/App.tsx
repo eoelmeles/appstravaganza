@@ -1,12 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { useGetUserInfoQuery } from './services/modules/user';
+import { Provider } from 'react-redux';
+import { persistor, store } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export default function App() {
+  const { data } = useGetUserInfoQuery('1');
+  console.log(data);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      {/**
+       * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
+       * and saved to redux.
+       * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
+       * for example `loading={<SplashScreen />}`.
+       * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
+       */}
+      <PersistGate loading={null} persistor={persistor}>
+        {/* <ApplicationNavigator /> */}
+        <View style={styles.container}>
+          <Text>Click</Text>
+          <Button title="Fetch" />
+          <StatusBar style="auto" />
+        </View>
+      </PersistGate>
+    </Provider>
   );
 }
 
